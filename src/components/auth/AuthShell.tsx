@@ -18,7 +18,7 @@ export function AuthShell({
         <Link href="/" className="inline-flex items-center gap-2">
           <Logo className="h-8 w-8" />
           <span className="text-base font-extrabold tracking-tight">
-            Sama-sama
+            ONETRAVEL
           </span>
         </Link>
       </header>

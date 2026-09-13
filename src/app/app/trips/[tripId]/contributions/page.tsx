@@ -152,7 +152,7 @@ export default async function ContributionsPage({
       </section>
 
       <p className="px-2 text-center text-xs text-text-muted">
-        Sama-sama records contributions made outside the app. It does not hold
+        ONETRAVEL records contributions made outside the app. It does not hold
         your money.
       </p>
     </div>

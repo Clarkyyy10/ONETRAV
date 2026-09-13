@@ -1,5 +1,5 @@
 /**
- * Money handling for Sama-sama Savings.
+ * Money handling for ONETRAVEL.
  *
  * Per architecture.md: money is stored as an integer number of centavos
  * (the smallest PHP unit) to avoid floating-point errors. ₱100.50 -> 10050.

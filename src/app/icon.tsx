@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-// Generated PWA / favicon icon — the Sama-sama mark (two overlapping rings)
+// Generated PWA / favicon icon — the ONETRAVEL mark (two overlapping rings)
 // rendered white on the locked teal accent. Served by Next at /icon.
 export const size = { width: 512, height: 512 };
 export const contentType = "image/png";

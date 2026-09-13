@@ -10,14 +10,14 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sama-sama Savings: plan together, save together.",
+  title: "ONETRAVEL: plan together, save together.",
   description:
-    "Sama-sama Savings helps friend groups plan trips, set a shared funding target, track contributions, and split expenses fairly. All in one calm, friendly app.",
-  applicationName: "Sama-sama Savings",
+    "ONETRAVEL helps friend groups plan trips, set a shared funding target, track contributions, and split expenses fairly. All in one calm, friendly app.",
+  applicationName: "ONETRAVEL",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Sama-sama",
+    title: "ONETRAVEL",
   },
   formatDetection: { telephone: false },
 };

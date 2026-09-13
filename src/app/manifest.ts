@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
 
 /**
- * Web app manifest — makes Sama-sama installable to the home screen on any
+ * Web app manifest — makes ONETRAVEL installable to the home screen on any
  * device (Android/Chrome/Edge, desktop Chromium, and iOS via apple-icon).
  * Icons are generated on the fly by src/app/icon.tsx and apple-icon.tsx.
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sama-sama Savings",
-    short_name: "Sama-sama",
+    name: "ONETRAVEL",
+    short_name: "ONETRAVEL",
     description:
       "Plan trips with your group, set a shared funding target, track contributions, and split expenses fairly.",
     start_url: "/app",

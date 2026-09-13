@@ -56,7 +56,7 @@ export default async function TripOverviewPage({
           This trip is still being planned
         </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-text-secondary">
-          Add a day-by-day itinerary and expected costs. Sama-sama will total it
+          Add a day-by-day itinerary and expected costs. ONETRAVEL will total it
           up and work out each person&rsquo;s share.
         </p>
         <div className="mt-6 flex justify-center gap-3">

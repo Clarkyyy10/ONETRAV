@@ -1,5 +1,5 @@
 /**
- * Sama-sama mark — two overlapping rings ("together"), a single simple
+ * ONETRAVEL mark — two overlapping rings ("together"), a single simple
  * geometric brand mark. Uses currentColor + the accent token so it works
  * in light and dark.
  */

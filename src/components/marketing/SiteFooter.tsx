@@ -38,7 +38,7 @@ export function SiteFooter() {
           <div className="flex items-center gap-2">
             <Logo className="h-8 w-8" />
             <span className="text-base font-extrabold tracking-tight">
-              Sama-sama
+              ONETRAVEL
             </span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-text-secondary">

@@ -21,7 +21,7 @@ export function SiteNav() {
         >
           <Logo className="h-7 w-7" />
           <span className="text-[15px] font-extrabold tracking-tight">
-            Sama-sama
+            ONETRAVEL
           </span>
         </Link>
 

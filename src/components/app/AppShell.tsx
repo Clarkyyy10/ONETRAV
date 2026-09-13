@@ -59,7 +59,7 @@ export function AppShell({
           >
             <Logo className="h-8 w-8" />
           </motion.span>
-          <span className="text-base font-extrabold tracking-tight">Sama-sama</span>
+          <span className="text-base font-extrabold tracking-tight">ONETRAVEL</span>
         </Link>
         <nav aria-label="Primary" className="flex flex-col gap-1">
           {nav.map((item) => {
