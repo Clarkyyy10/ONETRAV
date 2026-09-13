@@ -603,6 +603,15 @@ create policy "media authed insert" on storage.objects for insert to authenticat
 create policy "media authed update" on storage.objects for update to authenticated using (bucket_id in ('trip-covers','avatars')) with check (bucket_id in ('trip-covers','avatars'));
 create policy "media authed delete" on storage.objects for delete to authenticated using (bucket_id in ('trip-covers','avatars'));
 
+-- ---------------------------------------------------------------------------
+-- 11 · allow pending invitees to read the trip they were invited to
+-- Without this, RLS hides the trip from a non-member invitee, so invitation
+-- cards show "A trip" and accepting fails with "That trip no longer exists."
+-- ---------------------------------------------------------------------------
+create policy trips_select_invitee on trips
+  for select to authenticated
+  using (private.has_pending_trip_invite(id));
+
 -- ============================================================================
 -- Done. ONETRAV now matches the sama-sama schema.
 -- ============================================================================
