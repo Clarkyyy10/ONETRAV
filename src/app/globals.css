@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Sama-sama Savings — Design Tokens
+   Palette lock: deep teal accent over warm stone neutrals.
+   One accent, one radius system, dual-mode (auto via system).
+   ============================================================ */
+
+:root {
+  /* Surfaces (warm stone neutrals) */
+  --bg: #f7f5f2;
+  --surface: #ffffff;
+  --surface-2: #f2efea;
+  --surface-inset: #ece8e2;
+
+  /* Hairlines & borders */
+  --border: rgb(28 25 23 / 0.08);
+  --border-strong: rgb(28 25 23 / 0.14);
+
+  /* Text */
+  --text: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #8a8279;
+
+  /* Accent (teal — savings + travel, locked across the app) */
+  --accent: #0e7c73;
+  --accent-hover: #0b665f;
+  --accent-soft: #d8efeb;
+  --accent-fg: #ffffff;
+
+  /* Semantic (used for status, never decoration) */
+  --success: #0f8a5f;
+  --success-soft: #dcf3e8;
+  --warning: #b4740b;
+  --warning-soft: #f8ecd4;
+  --danger: #d1435b;
+  --danger-soft: #fadfe3;
+
+  /* Elevation — soft, tinted, never harsh black */
+  --shadow-sm: 0 1px 2px rgb(28 25 23 / 0.04), 0 1px 3px rgb(28 25 23 / 0.05);
+  --shadow-md: 0 4px 12px rgb(28 25 23 / 0.06), 0 2px 4px rgb(28 25 23 / 0.04);
+  --shadow-lg: 0 18px 48px rgb(28 25 23 / 0.10), 0 6px 16px rgb(28 25 23 / 0.06);
+
+  /* Radius system (shape lock: cards 24px, controls 14px, pills full) */
+  --radius-card: 1.5rem;
+  --radius-control: 0.875rem;
+  --radius-pill: 999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1413;
+    --surface: #161d1c;
+    --surface-2: #1d2524;
+    --surface-inset: #101716;
+
+    --border: rgb(255 255 255 / 0.08);
+    --border-strong: rgb(255 255 255 / 0.14);
+
+    --text: #edecea;
+    --text-secondary: #b4b6b3;
+    --text-muted: #868b89;
+
+    --accent: #2dd4bf;
+    --accent-hover: #5eded0;
+    --accent-soft: #10312d;
+    --accent-fg: #04211e;
+
+    --success: #34d399;
+    --success-soft: #10312a;
+    --warning: #e0b25a;
+    --warning-soft: #33280f;
+    --danger: #fb7185;
+    --danger-soft: #3a1620;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 14px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 20px 52px rgb(0 0 0 / 0.55), 0 6px 16px rgb(0 0 0 / 0.4);
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-inset: var(--surface-inset);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+
+  --radius-card: var(--radius-card);
+  --radius-control: var(--radius-control);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-soft-sm: var(--shadow-sm);
+  --shadow-soft-md: var(--shadow-md);
+  --shadow-soft-lg: var(--shadow-lg);
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Money and tabular figures read cleaner aligned */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Custom easing tokens (no linear / ease-in-out defaults) */
+.ease-fluid {
+  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Entry animation — gentle fade-up, motivated + reduced-motion safe */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Focus ring — visible, accent-based, accessible */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
